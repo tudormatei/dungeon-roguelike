@@ -22,6 +22,8 @@ namespace Dungeon.DungeonGeneration
     /// </summary>
     public class DungeonGenerator : MonoBehaviour
     {
+        [SerializeField] private bool testingScene = false;
+
         [Header("Dungeon Tiles")]
         [SerializeField] GameObject[] startPrefabs;
         [SerializeField] GameObject[] tilePrefabs;
@@ -202,6 +204,16 @@ namespace Dungeon.DungeonGeneration
             dungeonState = DungeonState.completed;
 
             StaticBatchingUtility.Combine(gameObject);
+
+            if (testingScene)
+            {
+                foreach(Transform t in gameObject.GetComponentsInChildren<Transform>())
+                {
+                    Destroy(t.gameObject);
+                }
+                Destroy(doorsParent);
+                Destroy(GameObject.Find("Start Room"));
+            }
         }
 
         private void SpawnDoors()

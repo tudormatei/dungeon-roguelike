@@ -232,15 +232,15 @@ namespace Core.Combat
         {
             switch (jewelryType)
             {
-                case JewelryType.Fire_Ring:
-                    StartCoroutine(FireRingBehaviour());
+                case JewelryType.Fire_Amulet:
+                    StartCoroutine(FireAmuletBehaviour());
                     break;
                 default:
                     break;
             }
         }
 
-        private IEnumerator FireRingBehaviour()
+        private IEnumerator FireAmuletBehaviour()
         {
             float currentTime = 0f;
             while (jewelryEffectActive)
