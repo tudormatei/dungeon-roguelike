@@ -71,9 +71,6 @@ namespace Core.ItemManagement
 
             var _item = hoveringItem.item;
 
-            Debug.Log(hoveringItem.ItemObject.description);
-            Debug.Log(hoveringItem.item.name);
-
             description.GetComponent<Description>().AssignValues(_item.name, hoveringItem.ItemObject.description, textInfo.ToTitleCase(_buffs), hoveringItem.ItemObject.uIDisplay, hoveringItem.ItemObject.rarity);
         }
 

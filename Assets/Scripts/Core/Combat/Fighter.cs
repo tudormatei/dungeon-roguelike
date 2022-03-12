@@ -234,10 +234,8 @@ namespace Core.Combat
             {
                 case JewelryType.Fire_Amulet:
                     StartCoroutine(FireAmuletBehaviour());
-                    Debug.Log("fire amulet on");
                     break;
                 case JewelryType.Fire_Ring:
-                    Debug.Log("fire ring on");
                     break;
                 default:
                     break;
