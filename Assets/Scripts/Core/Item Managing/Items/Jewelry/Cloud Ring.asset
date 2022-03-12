@@ -16,10 +16,10 @@ MonoBehaviour:
   stackable: 0
   type: 1
   rarity: 3
-  description: After taking damage reduce gravity.
+  description: On enemy kill, gain random potion effect.
   data:
     name: 
-    id: 7
+    id: 12
     buffs: []
     dropProcentages: 
   jewelryType: 20

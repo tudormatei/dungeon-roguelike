@@ -16,10 +16,10 @@ MonoBehaviour:
   stackable: 0
   type: 1
   rarity: 3
-  description: Deals 10 damage around the player every 5 seconds.
+  description: Knockback enemies on hit.
   data:
     name: 
-    id: 7
+    id: 34
     buffs: []
     dropProcentages: 
   jewelryType: 18

@@ -16,10 +16,10 @@ MonoBehaviour:
   stackable: 0
   type: 1
   rarity: 3
-  description: Deals 10 damage around the player every 5 seconds.
+  description: Electrocute the nearest enemy from the attacked enemy.
   data:
     name: 
-    id: 7
+    id: 14
     buffs: []
     dropProcentages: 
   jewelryType: 17

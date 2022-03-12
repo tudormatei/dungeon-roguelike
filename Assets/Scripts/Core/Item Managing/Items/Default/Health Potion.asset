@@ -13,11 +13,9 @@ MonoBehaviour:
   m_Name: Health Potion
   m_EditorClassIdentifier: 
   uIDisplay: {fileID: 21300000, guid: 29afeaeb83d6c654bb8087d9239a664b, type: 3}
-  stackable: 0
+  stackable: 1
   type: 0
   rarity: 0
-  isKey: 0
-  keyHash: 0
   description: Health potion.
   data:
     name: 
