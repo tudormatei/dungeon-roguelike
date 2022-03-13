@@ -14,17 +14,11 @@ namespace Core.Combat
 
         private Vector3 initialPosition;
         private Quaternion initialRotation;
-
         private bool on = false;
 
         private void Awake()
         {
             controls = new Controls();
-        }
-
-        private void Start()
-        {
-            ActivateSway();
         }
 
         public void ActivateSway()

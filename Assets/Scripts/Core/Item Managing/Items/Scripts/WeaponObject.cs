@@ -16,6 +16,7 @@ namespace Core.ItemManagement
         [SerializeField] private string weaponName = "Unarmed";
 #pragma warning restore
         [SerializeField] private GameObject weaponPrefab;
+        public float attackSpeed = 1f;
         [SerializeField] private int numberOfAttackAnimations = 1;
         [SerializeField] private float critDamageMultiplier = 1.5f;
 
@@ -40,6 +41,7 @@ namespace Core.ItemManagement
                 weaponGO = Instantiate(weaponPrefab, weaponParent);
                 weaponGO.transform.localPosition = weaponPosition;
                 weaponGO.transform.localRotation = Quaternion.Euler(weaponRotation);
+                weaponGO.GetComponent<Sway>().ActivateSway();
             }
         }
 

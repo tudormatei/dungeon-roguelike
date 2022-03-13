@@ -64,7 +64,7 @@ namespace Core.Combat
             // TODO: Randomize. 
             GameObject.Find("Canvas").GetComponent<AudioManager>().TriggerSoundEffect(3);
 
-            StartCoroutine(AttackCooldown(1f));
+            StartCoroutine(AttackCooldown(currentWeapon.attackSpeed));
             if(currentWeaponAnimator != null) 
             { 
                 int animationIndex = Random.Range(1, currentWeapon.NumberOfAttackAnimations + 1); 
@@ -109,13 +109,19 @@ namespace Core.Combat
 
         private void ShootProjectile()
         {
+            float damage;
+            bool crit;
+            (damage, crit) = CalculateDamage();
             if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f)), out RaycastHit hit))
             {
-                float damage;
-                bool crit;
-                (damage, crit) = CalculateDamage();
+                
                 currentWeapon.ShootProjectile(hit.point, damage, crit);
-            }            
+            }
+            else
+            {
+                currentWeapon.ShootProjectile(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)).GetPoint(50), damage, crit);
+            }
+            
         }
         #endregion
 

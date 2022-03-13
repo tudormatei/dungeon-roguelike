@@ -9383,6 +9383,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 191841009}
     m_Modifications:
+    - target: {fileID: 5284071880122600957, guid: 1c240000b8720284085b1c8dc38bf23d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8167ee55fee10f14e9113321e151918c, type: 2}
     - target: {fileID: 5932427154250345512, guid: 1c240000b8720284085b1c8dc38bf23d, type: 3}
       propertyPath: m_Name
       value: 9mm Bullet Pickup
@@ -9405,11 +9409,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6422106389808248466, guid: 1c240000b8720284085b1c8dc38bf23d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 6422106389808248466, guid: 1c240000b8720284085b1c8dc38bf23d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 6422106389808248466, guid: 1c240000b8720284085b1c8dc38bf23d, type: 3}
       propertyPath: m_LocalRotation.y
@@ -9421,7 +9425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6422106389808248466, guid: 1c240000b8720284085b1c8dc38bf23d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 6422106389808248466, guid: 1c240000b8720284085b1c8dc38bf23d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -9431,6 +9435,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7975941087338854711, guid: 1c240000b8720284085b1c8dc38bf23d, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -7204647971529134275, guid: 1b596186a1c133f4db37acb17a87bdc9, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c240000b8720284085b1c8dc38bf23d, type: 3}
 --- !u!1001 &3965826405896467588
