@@ -21,7 +21,7 @@ MonoBehaviour:
 '
   data:
     name: 
-    id: 57
+    id: 56
     buffs:
     - attribute: 3
       value: 0
@@ -40,11 +40,12 @@ MonoBehaviour:
   numberOfAttackAnimations: 1
   critDamageMultiplier: 1.5
   isRanged: 1
+  needsBullets: 1
   projectilePrefab: {fileID: 5983621474545260151, guid: b7941f92774dbb649b8e684abd8dc046, type: 3}
   weaponRange: 20
   projectileLifetime: 5
   projectileSpeed: 20
-  projectileSpawnOffset: {x: -0.15, y: 0.1, z: 0}
+  projectileSpawnOffset: {x: -6.82, y: 2.91, z: 0}
   weaponRotation: {x: 0, y: 112, z: 0}
   weaponPosition: {x: 0.55, y: -0.22, z: 0.54}
   weaponGO: {fileID: 0}

@@ -5,7 +5,6 @@ using EZCameraShake;
 using TMPro;
 using Core.Player;
 using Core.ItemManagement;
-using Dungeon.Audio;
 using Core.Enemy;
 
 namespace Core.Combat
@@ -24,17 +23,23 @@ namespace Core.Combat
         private bool canAttack = true;
 
         private Controls controls;
+        private Interract playerInterract;
         
         [Header("Damage Display")]
         [SerializeField] private Color normalDamage;
         [SerializeField] private Color critDamage;
         [SerializeField] private GameObject damagePrefab;
 
+        [Header("Ammo Hud")]
+        [SerializeField] private TextMeshProUGUI ammoText;
+        [SerializeField] private GameObject ammoHud;
+
         #region Start Setup
         private void Awake()
         {
             controls = new Controls();
             playerAttributes = GetComponent<PlayerAttributes>();
+            playerInterract = GetComponent<Interract>();
         }
 
         private void Start()
@@ -61,11 +66,10 @@ namespace Core.Combat
             if(currentWeapon == null) { return; }
             if (!canAttack) { return; }
 
-            // TODO: Randomize. 
-            GameObject.Find("Canvas").GetComponent<AudioManager>().TriggerSoundEffect(3);
+            if(currentWeapon.IsRanged && !HasResourcesToShoot()) { return; }
 
             StartCoroutine(AttackCooldown(currentWeapon.attackSpeed));
-            if(currentWeaponAnimator != null) 
+            if(currentWeaponAnimator != null)
             { 
                 int animationIndex = Random.Range(1, currentWeapon.NumberOfAttackAnimations + 1); 
                 currentWeaponAnimator.SetTrigger("attack" + animationIndex); 
@@ -122,6 +126,48 @@ namespace Core.Combat
                 currentWeapon.ShootProjectile(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)).GetPoint(50), damage, crit);
             }
             
+        }
+
+        private bool HasResourcesToShoot()
+        {
+            if (playerInterract == null) { return false; }
+            InventoryObject inv = playerInterract.inventory;
+            if (inv == null) { return false; }
+            foreach (InventorySlot slot in inv.container.slots)
+            {
+                if (slot.ItemObject == null) { continue; }
+
+                if (slot.ItemObject.name.Contains("Bullet") && slot.amount >= 1)
+                {
+                    slot.amount--;
+                    ammoText.text = slot.amount.ToString();
+                    if(slot.amount == 0)
+                    {
+                        slot.RemoveItem();
+                    }
+                    slot.UpdateSlot(slot.item, slot.amount);
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private int GetCurrentAmmo()
+        {
+            if (playerInterract == null) { return 0; }
+            InventoryObject inv = playerInterract.inventory;
+            if (inv == null) { return 0; }
+            foreach (InventorySlot slot in inv.container.slots)
+            {
+                if (slot.ItemObject == null) { continue; }
+
+                if (slot.ItemObject.name.Contains("Bullet"))
+                {
+                    return slot.amount;
+                }
+            }
+            return 0;
         }
         #endregion
 
@@ -219,6 +265,10 @@ namespace Core.Combat
             }
 
             SetCurrentWeaponAnimator();
+            if (currentWeapon.NeedsBullets)
+            {
+                AmmoHud(true);
+            }
         }
 
         public void UnequipWeapon()
@@ -226,10 +276,20 @@ namespace Core.Combat
             if(currentWeapon != null)
             {
                 Destroy(currentWeapon.weaponGO);
+                if (currentWeapon.NeedsBullets)
+                {
+                    AmmoHud(false);
+                }
             }
             
             currentWeapon = null;
             SetCurrentWeaponAnimator();
+        }
+
+        private void AmmoHud(bool on)
+        {
+            ammoHud.SetActive(on);
+            ammoText.text = GetCurrentAmmo().ToString();
         }
         #endregion
 

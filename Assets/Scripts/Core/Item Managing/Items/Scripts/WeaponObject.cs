@@ -22,6 +22,7 @@ namespace Core.ItemManagement
 
         [Header("Ranged Weapon Settings")]
         [SerializeField] private bool isRanged;
+        [SerializeField] private bool needsBullets;
         [SerializeField] private GameObject projectilePrefab = null;
         [SerializeField] private float weaponRange;
         [SerializeField] private float projectileLifetime = 5f;
@@ -47,7 +48,9 @@ namespace Core.ItemManagement
 
         public void ShootProjectile(Vector3 target, float damageToDeal, bool crit)
         {
-            GameObject go = Instantiate(projectilePrefab, weaponGO.transform.position + projectileSpawnOffset, Quaternion.identity);
+            GameObject go = Instantiate(projectilePrefab);
+            go.transform.rotation = Quaternion.identity;
+            go.transform.position = weaponGO.transform.TransformPoint(projectileSpawnOffset);
             go.GetComponent<Projectile>().Target = target;
             go.GetComponent<Projectile>().Speed = projectileSpeed;
             go.GetComponent<Projectile>().DamageToDeal = damageToDeal;
@@ -60,6 +63,7 @@ namespace Core.ItemManagement
         public Vector3 WeaponOffset { get => weaponPosition; set => weaponPosition = value; }
         public int NumberOfAttackAnimations { get => numberOfAttackAnimations; set => numberOfAttackAnimations = value; }
         public float CritDamageMultiplier { get => critDamageMultiplier; set => critDamageMultiplier = value; }
+        public bool NeedsBullets { get => needsBullets; set => needsBullets = value; }
     }
 
 }

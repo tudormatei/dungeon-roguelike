@@ -55,6 +55,7 @@ namespace Dungeon.DungeonGeneration
                     if (((DefaultObject)slot.ItemObject).keyHash == keyHash)
                     {
                         openDoor = true;
+                        slot.RemoveItem();
                         break;
                     }
                 }

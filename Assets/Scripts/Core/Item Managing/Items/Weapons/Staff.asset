@@ -16,8 +16,6 @@ MonoBehaviour:
   stackable: 0
   type: 3
   rarity: 1
-  isKey: 0
-  keyHash: 0
   description: The starting mage staff.
   data:
     name: 
@@ -36,6 +34,7 @@ MonoBehaviour:
     dropProcentages: 
   weaponName: Staff
   weaponPrefab: {fileID: 3303781024399168158, guid: cc67802db133f0b45ba057f86c828e00, type: 3}
+  attackSpeed: 1
   numberOfAttackAnimations: 1
   critDamageMultiplier: 1.5
   isRanged: 1
@@ -43,7 +42,7 @@ MonoBehaviour:
   weaponRange: 20
   projectileLifetime: 5
   projectileSpeed: 20
-  projectileSpawnOffset: {x: 0, y: 0.45, z: 0}
+  projectileSpawnOffset: {x: -4.93, y: 18.2, z: 0}
   weaponRotation: {x: 0, y: 90, z: 0}
   weaponPosition: {x: 0.6, y: -0.23, z: 0.62499386}
   weaponGO: {fileID: 0}
