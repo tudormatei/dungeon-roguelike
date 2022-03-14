@@ -3,6 +3,7 @@ using UnityEngine;
 using Dungeon.DungeonGeneration;
 using Dungeon.UI;
 using Dungeon.Audio;
+using Core.Combat;
 
 namespace Core.ItemManagement
 {
@@ -18,6 +19,7 @@ namespace Core.ItemManagement
         [Header("Middle Variables")]
         public static bool panelOpen = false;
         private Controls controls;
+        private Fighter fighter;
 
         [Header("Inventory")]
         public InventoryObject inventory;
@@ -37,6 +39,7 @@ namespace Core.ItemManagement
         {
             crosshair.SetActive(true);
             grabIcon.SetActive(false);
+            fighter = GetComponent<Fighter>();
 
             controls.Gameplay.Interract.performed += ctx => InterractWithItem();
             controls.Gameplay.Inventory.performed += ctx => OpenInventory();
@@ -77,8 +80,22 @@ namespace Core.ItemManagement
                     if (inventory.AddItem(new Item(item.item), 1))
                     {
                         GameObject.Find("Canvas").GetComponent<AudioManager>().TriggerSoundEffect(1);
+                        UpdateAmmo();
                         Destroy(hit.collider.gameObject);
                     }
+                }
+            }
+        }
+
+        private void UpdateAmmo()
+        {
+            foreach (InventorySlot slot in inventory.container.slots)
+            {
+                if (slot.ItemObject == null) { continue; }
+
+                if (slot.ItemObject.name.Contains("Bullet"))
+                {
+                    fighter.UpdateAmmoCounter();
                 }
             }
         }

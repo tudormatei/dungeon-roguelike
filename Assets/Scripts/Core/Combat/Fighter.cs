@@ -169,6 +169,22 @@ namespace Core.Combat
             }
             return 0;
         }
+
+        public void UpdateAmmoCounter()
+        {
+            if (playerInterract == null) { return; }
+            InventoryObject inv = playerInterract.inventory;
+            if (inv == null) { return; }
+            foreach (InventorySlot slot in inv.container.slots)
+            {
+                if (slot.ItemObject == null) { continue; }
+
+                if (slot.ItemObject.name.Contains("Bullet"))
+                {
+                    ammoText.text = slot.amount.ToString();
+                }
+            }
+        }
         #endregion
 
         #region Damage Calculation

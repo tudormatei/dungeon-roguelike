@@ -21,7 +21,7 @@ MonoBehaviour:
 '
   data:
     name: 
-    id: 9
+    id: 57
     buffs:
     - attribute: 0
       value: 0
@@ -34,11 +34,13 @@ MonoBehaviour:
       max: 100
       dropProcentages: 32000000190000000a000000
     dropProcentages: 
-  weaponName: Sword
-  weaponPrefab: {fileID: 495624578768287363, guid: 4b5ba0b9330426542bbd19b72773bbe6, type: 3}
-  numberOfAttackAnimations: 2
+  weaponName: Katana
+  weaponPrefab: {fileID: 495624578768287363, guid: 5cef392c6f5840649919c02f4f0fb6ba, type: 3}
+  attackSpeed: 1
+  numberOfAttackAnimations: 1
   critDamageMultiplier: 1.5
   isRanged: 0
+  needsBullets: 0
   projectilePrefab: {fileID: 0}
   weaponRange: 0
   projectileLifetime: 5
