@@ -4,6 +4,23 @@ using Core.Player;
 
 namespace Core.ItemManagement
 {
+    public enum Elements
+    {
+        Fire,
+        Ice,
+        Stone,
+        Electic,
+        Water,
+        Wind,
+        Cloud,
+        Void,
+        Magma,
+        Mecha,
+        Magic,
+        Light,
+        Shadow
+    }
+
     public enum ItemType
     {
         Food,

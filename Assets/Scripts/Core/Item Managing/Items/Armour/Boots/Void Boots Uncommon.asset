@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5774539e2827b504a863420287a51845, type: 3}
+  m_Name: Void Boots Uncommon
+  m_EditorClassIdentifier: 
+  uIDisplay: {fileID: 21300000, guid: a9128dc49219ded4eafbfa37a89e1a08, type: 3}
+  stackable: 0
+  type: 5
+  rarity: 1
+  description: Boots part of void element set.
+  data:
+    name: 
+    id: 106
+    buffs:
+    - attribute: 5
+      value: 0
+      min: 1
+      max: 10
+      dropProcentages: 320000001900000005000000
+    - attribute: 11
+      value: 0
+      min: 1
+      max: 10
+      dropProcentages: 320000001900000005000000
+    - attribute: 6
+      value: 0
+      min: 5
+      max: 50
+      dropProcentages: 320000001900000005000000
+    dropProcentages: 
+  element: 7
+  atkBonus: 0
+  defenseBonus: 0

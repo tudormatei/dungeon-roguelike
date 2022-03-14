@@ -15,6 +15,7 @@ namespace Core.ItemManagement
 #pragma warning disable
         [SerializeField] private string weaponName = "Unarmed";
 #pragma warning restore
+        public Elements element;
         [SerializeField] private GameObject weaponPrefab;
         public float attackSpeed = 1f;
         [SerializeField] private int numberOfAttackAnimations = 1;

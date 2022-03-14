@@ -5,6 +5,7 @@ namespace Core.ItemManagement
     [CreateAssetMenu(fileName = "New Boots Object", menuName = "Inventory System/Item/Boots")]
     public class BootsObject : ItemObject
     {
+        public Elements element;
         public float atkBonus;
         public float defenseBonus;
 

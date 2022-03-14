@@ -19,10 +19,11 @@ MonoBehaviour:
   description: When dealing damage, blind the enemy.
   data:
     name: 
-    id: 27
+    id: 39
     buffs: []
     dropProcentages: 
-  jewelryType: 26
+  element: 12
+  jewelryType: 0
   effect: {fileID: 8390852067715329355, guid: 2298198ae80f75347bfeae7021d7d351, type: 3}
   timeBetweenAttacks: 5
   range: 3

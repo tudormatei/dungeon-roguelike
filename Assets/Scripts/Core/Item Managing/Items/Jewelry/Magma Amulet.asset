@@ -19,10 +19,11 @@ MonoBehaviour:
   description: When taking damage, reflect 25% back to the enemy.
   data:
     name: 
-    id: 22
+    id: 34
     buffs: []
     dropProcentages: 
-  jewelryType: 8
+  element: 8
+  jewelryType: 1
   effect: {fileID: 8390852067715329355, guid: 2298198ae80f75347bfeae7021d7d351, type: 3}
   timeBetweenAttacks: 5
   range: 3

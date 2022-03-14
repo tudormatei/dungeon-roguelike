@@ -19,10 +19,11 @@ MonoBehaviour:
   description: If 3 or more enemies are nearby, slow down time.
   data:
     name: 
-    id: 31
+    id: 42
     buffs: []
     dropProcentages: 
-  jewelryType: 7
+  element: 7
+  jewelryType: 1
   effect: {fileID: 8390852067715329355, guid: 2298198ae80f75347bfeae7021d7d351, type: 3}
   timeBetweenAttacks: 5
   range: 3

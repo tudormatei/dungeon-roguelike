@@ -19,10 +19,11 @@ MonoBehaviour:
   description: Electrocute the nearest enemy from the attacked enemy.
   data:
     name: 
-    id: 14
+    id: 25
     buffs: []
     dropProcentages: 
-  jewelryType: 17
+  element: 3
+  jewelryType: 0
   effect: {fileID: 8390852067715329355, guid: 2298198ae80f75347bfeae7021d7d351, type: 3}
   timeBetweenAttacks: 5
   range: 3

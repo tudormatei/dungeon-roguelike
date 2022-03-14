@@ -19,10 +19,11 @@ MonoBehaviour:
   description: Deals 10 damage around the player every 5 seconds.
   data:
     name: 
-    id: 11
+    id: 22
     buffs: []
     dropProcentages: 
-  jewelryType: 6
+  element: 6
+  jewelryType: 1
   effect: {fileID: 8390852067715329355, guid: 2298198ae80f75347bfeae7021d7d351, type: 3}
   timeBetweenAttacks: 5
   range: 3

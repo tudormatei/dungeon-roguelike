@@ -19,9 +19,10 @@ MonoBehaviour:
   description: When damaged, freeze surrounding enemies.
   data:
     name: 
-    id: 16
+    id: 28
     buffs: []
     dropProcentages: 
+  element: 1
   jewelryType: 1
   effect: {fileID: 8390852067715329355, guid: 2298198ae80f75347bfeae7021d7d351, type: 3}
   timeBetweenAttacks: 5

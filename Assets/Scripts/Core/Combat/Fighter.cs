@@ -312,15 +312,16 @@ namespace Core.Combat
         #region Jewelry Behaviour
         private void CheckJewelryType(JewelryType jewelryType)
         {
-            switch (jewelryType)
+            if(jewelryType == JewelryType.Ring)
             {
-                case JewelryType.Fire_Amulet:
+
+            }
+            else if(jewelryType == JewelryType.Amulet)
+            {
+                if(currentJewelry.element == Elements.Fire)
+                {
                     StartCoroutine(FireAmuletBehaviour());
-                    break;
-                case JewelryType.Fire_Ring:
-                    break;
-                default:
-                    break;
+                }
             }
         }
 

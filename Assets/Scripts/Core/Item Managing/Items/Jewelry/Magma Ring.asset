@@ -19,10 +19,11 @@ MonoBehaviour:
   description: On damage dealt, split the earth and deal damage.
   data:
     name: 
-    id: 23
+    id: 35
     buffs: []
     dropProcentages: 
-  jewelryType: 21
+  element: 8
+  jewelryType: 0
   effect: {fileID: 8390852067715329355, guid: 2298198ae80f75347bfeae7021d7d351, type: 3}
   timeBetweenAttacks: 5
   range: 3

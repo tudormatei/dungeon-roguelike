@@ -19,10 +19,11 @@ MonoBehaviour:
   description: When dealing damage, summon a beam of light from the sky.
   data:
     name: 
-    id: 19
+    id: 31
     buffs: []
     dropProcentages: 
-  jewelryType: 25
+  element: 11
+  jewelryType: 0
   effect: {fileID: 8390852067715329355, guid: 2298198ae80f75347bfeae7021d7d351, type: 3}
   timeBetweenAttacks: 5
   range: 3
