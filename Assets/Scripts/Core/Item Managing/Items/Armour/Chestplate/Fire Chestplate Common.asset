@@ -19,7 +19,7 @@ MonoBehaviour:
   description: Chestplate part of fire element set.
   data:
     name: 
-    id: 0
+    id: 127
     buffs:
     - attribute: 5
       value: 0
@@ -38,5 +38,3 @@ MonoBehaviour:
       dropProcentages: 320000001900000005000000
     dropProcentages: 
   element: 0
-  atkBonus: 0
-  defenseBonus: 0

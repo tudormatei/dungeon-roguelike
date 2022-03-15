@@ -6,8 +6,6 @@ namespace Core.ItemManagement
     public class HelmetObject : ItemObject
     {
         public Elements element;
-        public float atkBonus;
-        public float defenseBonus;
 
         private void Awake()
         {

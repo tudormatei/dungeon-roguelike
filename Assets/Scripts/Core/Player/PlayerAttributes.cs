@@ -12,11 +12,13 @@ namespace Core.Player
         public Attribute[] attributes;
 
         private Fighter fighter;
+        private CheckSets checkSets;
 
         private void Awake()
         {
             SetupDefaultAttributes();
             fighter = GetComponent<Fighter>();
+            checkSets = GetComponent<CheckSets>();
         }
 
         private void Start()
@@ -76,6 +78,8 @@ namespace Core.Player
                 default:
                     break;
             }
+
+            checkSets.CheckSetsBehaviour();
         }
 
         public void OnAddItem(InventorySlot _slot)
@@ -114,6 +118,8 @@ namespace Core.Player
                 default:
                     break;
             }
+
+            checkSets.CheckSetsBehaviour();
         }
 
         public float GetAttributeModifiedValue(Attributes attribute)

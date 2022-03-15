@@ -6,8 +6,6 @@ namespace Core.ItemManagement
     public class ChestObject : ItemObject
     {
         public Elements element;
-        public float atkBonus;
-        public float defenseBonus;
 
         private void Awake()
         {
