@@ -19,7 +19,7 @@ namespace Core.Combat
         public JewelryObject currentJewelry = null;
         private bool jewelryEffectActive;
 
-        private Animator currentWeaponAnimator;
+        private Animator[] currentWeaponAnimators;
         private bool canAttack = true;
 
         private Controls controls;
@@ -69,10 +69,13 @@ namespace Core.Combat
             if(currentWeapon.IsRanged && !HasResourcesToShoot()) { return; }
 
             StartCoroutine(AttackCooldown(currentWeapon.attackSpeed));
-            if(currentWeaponAnimator != null)
+            if(currentWeaponAnimators != null)
             { 
-                int animationIndex = Random.Range(1, currentWeapon.NumberOfAttackAnimations + 1); 
-                currentWeaponAnimator.SetTrigger("attack" + animationIndex); 
+                foreach(Animator animator in currentWeaponAnimators)
+                {
+                    int animationIndex = Random.Range(1, currentWeapon.NumberOfAttackAnimations + 1);
+                    animator.SetTrigger("attack" + animationIndex);
+                }   
             }
 
             bool range = currentWeapon.IsRanged;
@@ -88,11 +91,11 @@ namespace Core.Combat
 
         private void SetCurrentWeaponAnimator()
         {
-            if(currentWeapon == null) { currentWeaponAnimator = null; return; }
+            if(currentWeapon == null) { currentWeaponAnimators = null; return; }
 
             if (currentWeapon.weaponGO != null)
             {
-                currentWeaponAnimator = currentWeapon.weaponGO.transform.GetChild(0).GetComponent<Animator>();
+                currentWeaponAnimators = currentWeapon.weaponGO.transform.GetComponentsInChildren<Animator>();
             }
         }
 

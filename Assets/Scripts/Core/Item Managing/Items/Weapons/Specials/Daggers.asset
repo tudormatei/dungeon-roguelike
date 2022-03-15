@@ -19,7 +19,7 @@ MonoBehaviour:
   description: Two daggers that kill fast.
   data:
     name: 
-    id: 9
+    id: 247
     buffs:
     - attribute: 0
       value: 0
@@ -33,9 +33,10 @@ MonoBehaviour:
       dropProcentages: 32000000190000000a000000
     dropProcentages: 
   weaponName: Daggers
-  weaponPrefab: {fileID: 495624578768287363, guid: 4b5ba0b9330426542bbd19b72773bbe6, type: 3}
+  element: 0
+  weaponPrefab: {fileID: 495624578768287363, guid: 99f8e52d5492b6744b86bf31136d1173, type: 3}
   attackSpeed: 1
-  numberOfAttackAnimations: 2
+  numberOfAttackAnimations: 1
   critDamageMultiplier: 1.5
   isRanged: 0
   needsBullets: 0
